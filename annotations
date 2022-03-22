@@ -1,0 +1,99 @@
+/*############## ANOTAÇOES IMPORTANTES ###########*/
+
+//ARROW FUNCTION
+
+/**Em React é comum o uso de Arrow Function para substituir 
+as funções.*/
+
+//EX FUNÇÕES NORMAIS:
+function myFunction(){
+    //code
+}
+
+//EX DE ARROW FUNCTION:
+const myFnc = () => {
+    //code
+}
+/**De forma reduzida, pode-se suprimir os parênteses
+e o bloco de código, ficando da seguite forma:
+const myFnc = parâmetro(s) => retorno da função*/
+//EX: 
+const myFnc = p1  => p1 * 2
+console.log(myFnc(3))
+// 6
+
+__________________________________________________
+
+//CLASSE PRORIEDADES E MÉTODOS
+
+//############## ES6 ########################
+//CLASSE PAI
+class Human {
+  constructor(){
+    this.gender = 'male';
+  }
+  printGender(){
+    console.log(this.gender);
+  }
+}
+//CLASSE FILHO
+class Person extends Human {
+  constructor(){
+    super(); // método para executar o construtor pai na classe Human
+    this.name = 'marcos';
+  }
+  printName(){
+    console.log(this.name);
+  }
+}
+const person = new Person();
+person.printName();
+person.printGender();
+
+//############# ES7 ###########################
+//next generation of JS
+//CLASSE PAI
+class Human {
+    gender = 'male';
+  
+    printGender = () => {
+        console.log(this.gender);
+  }
+}
+//CLASSE FILHO
+class Person extends Human {
+    name = 'marcos';
+  
+    printName = () => {
+        console.log(this.name);
+    }
+}
+const person = new Person();
+person.printName();
+person.printGender();
+
+______________________________________________________________
+
+// SPREAD OPERATOR
+
+//EX IN ARRAY:
+const numbers = [1,2,3];
+const newNumbers = [...numbers, 4,5];
+console.log(newNumbers);
+//[1,2,3,4,5]
+
+//EX IN OBJECT
+const person = {
+  name: 'marcos';
+};
+
+const newPerson = {
+  ...person,
+  age: 28
+}
+console.log(newPerson);
+/**[object Object]{
+  age: 28,
+  name: 'marcos'
+}
+  */
